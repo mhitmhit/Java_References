@@ -24,6 +24,7 @@ public class Notes_1 {
 //      OOP Pillars:
 //Encapsulation:
 //concept of a class. grouping behaviors and attributes together in a single entity of Object.
+// using getters and setters.
 
 //Abstraction:
 //concept of a user using an object. they know the available methods, but they dont know how they are implemented.
@@ -38,6 +39,13 @@ public class Notes_1 {
 //concept of an ObjA is an ObjB.
 //referred to parent/child, superclass/child class.		
 	
+// Static: means something belongs to the class, not the object.
+		
+// final: when used with variables: variables are constant and cannot be changed.
+// 		: when used with a class: class cannot be extended.
+		
+
+
 		
 		
 //		Arrays:
