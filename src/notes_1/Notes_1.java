@@ -20,6 +20,7 @@ public class Notes_1 {
 		System.out.println(numb1);
 	
 		
+		
 //      OOP Pillars:
 //Encapsulation:
 //concept of a class. grouping behaviors and attributes together in a single entity of Object.
@@ -38,37 +39,44 @@ public class Notes_1 {
 //referred to parent/child, superclass/child class.		
 	
 		
+		
 //		Arrays:
 //immutable in size, no methods, works with Java.Util.Arrays class, both primitive and reference types.
 //ex:
-		int[] numbers = new int[3];
+		int[] numbersArray = new int[3];
 		//int[] numbers = {25, -1};
-		numbers[0] = 25;
-		numbers[1] = -1;
-		System.out.println(numbers[0]);		
+		numbersArray[0] = 25;
+		numbersArray[1] = -1;
+		System.out.println(numbersArray[0]);		
+		
 		
 		
 //		ArrayList:
 //mutable in size, many methods, works with Java.Util.Collections class, need to be imported, ref types only (but can use wrappers for primitives).
-		ArrayList<String> names = new ArrayList<String>();
-		names.add("ali");
-		names.get(0);
+		ArrayList<String> namesArrayList = new ArrayList<String>();
+		namesArrayList.add("ali");
+		namesArrayList.get(0);
 		
-		ArrayList<Integer> nums = new ArrayList<Integer>();
-		nums.add(1);
-		System.out.println(nums.get(0));
+		ArrayList<Integer> numsArrayList = new ArrayList<Integer>();
+		numsArrayList.add(1);
+		System.out.println(numsArrayList.get(0));
+		
 		
 //		Array + Collection Class (Must be imported):
 //Arrays is a class that act on Arrays, must be imported into the class.
 //Collections is a class that act on collections (ArrayList is a collection), must be imported into the class.		
 		// using Arrays Class on above ArrayLists
-		Arrays.toString(numbers);
-		Collections.max(nums);
+		Arrays.toString(numbersArray);
+		Collections.max(numsArrayList);
+		
+		
 		
 //		conditional Ternary:
 		int mark = 100;
 		String result = (mark > 75) ? "pass" : "fail";
 		Boolean result2 = (mark > 75) ? true : false;
+		
+		
 		
 //		forEach loop:
 		String[] allFruits = { "Apple", "Orange", "Banana", "Grape", "Cherry" };
@@ -77,14 +85,23 @@ public class Notes_1 {
 		}
 		
 		
+		// Parameter Spread Example:
+		System.out.println("------------------");
+		System.out.println("spreading example");
+		System.out.println(adding_Example(1, 2, 10));
+		
+		
+		
 
 // -----------------------End Of Main-------------------------------------------------------------------------		
 	}
 //		Parameters Spread example:
 //below method will take in any number of integers
-	public static int add(int... values){
+	public static int adding_Example(int... values){
+		// call example: adding_Example(1, 2, 10)
 	    int res = 0;
 	    for(int eachValue : values){
+	    	System.out.println(eachValue);
 	      res += eachValue;
 	    }
 	    return res;
