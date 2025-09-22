@@ -19,7 +19,8 @@ public class Access_Modifiers_And_Special_Keywords {
 // keywords:
 //		null: 	has a type, but no ref to an object. ie/ no instance.
 //				primitives are never null. they get assigned default values by Java.
-//		this: 	ref to the instance of the object.
+//		this: 	ref to the instance of the object. (both variables and methods)
+// 		super:	used to call constructor on the super class from sub class. (both variables and methods)
 	
 // methods:
 //		static:	associated with the whole class itself. must be accessed using class name.
