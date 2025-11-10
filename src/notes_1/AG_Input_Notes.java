@@ -2,7 +2,7 @@ package notes_1;
 
 import java.util.Scanner;
 
-public class Input_Notes {
+public class AG_Input_Notes {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

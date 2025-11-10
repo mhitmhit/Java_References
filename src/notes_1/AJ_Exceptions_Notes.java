@@ -1,9 +1,13 @@
 package notes_1;
 
-public class Exceptions_Notes {
+public class AJ_Exceptions_Notes {
 	
 	public static void main(String[] args) {
 	
+		// compiling error: error on java class file while coding
+		
+		// Run time error: error not detected while coding, but throws and exception when running the code.
+		
 		
 		// Exceptions
 //		try{

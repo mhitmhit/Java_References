@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
-public class Looping_Notes {
+public class AH_Looping_and_ControlFlow_Notes {
 
 	public static void main(String[] args) {
 		
@@ -26,6 +26,25 @@ public class Looping_Notes {
 		System.out.println("------------------");
 		System.out.println("spreading example");
 		System.out.println(adding_Example(1, 2, 10));
+		
+		
+		
+		switch (mark) {
+			case 90:
+				System.out.println("A+");
+				break;
+			case 80:
+				System.out.println("A");
+				break;
+			case 70:
+				System.out.println("B");
+				break;
+			default:
+				System.out.println("Fail");
+		}
+			
+		
+		
 		
 		
 		

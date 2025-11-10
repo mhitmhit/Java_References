@@ -1,6 +1,6 @@
 package notes_1;
 
-public class Collections_Notes {
+public class AD_Lesson_Collections_Notes {
 	// collection Framework:
 //		List --- ArrayList
 //		Set ---- HashSet, TreeSet

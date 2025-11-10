@@ -3,15 +3,15 @@ package notes_1;
 //when no constructor is present, Java use a default no arg constructor.
 
 
-public class constructors {
+public class AF_constructors {
 	
 	private int numberOfMethods;
 	
-	public constructors() {
+	public AF_constructors() {
 		this(8); // calls the other constructor. calling constructor within constructor. Constructor Chaining.
 	}
 	
-	public constructors(int numberOfMethods) {
+	public AF_constructors(int numberOfMethods) {
 		this.numberOfMethods = numberOfMethods;
 		
 	}

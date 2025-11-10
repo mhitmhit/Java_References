@@ -1,6 +1,11 @@
 package notes_1;
 
-public class Abstract_Classes_And_Interfaces_Notes {
+public class AI_Abstract_Classes_And_Interfaces_Notes {
+	
+	
+	
+	
+	
 //	 Abstract classes: can be used in a concrete class by getting extended. a concrete class can inherit only one abstract class.
 //		abstract class can have both abstract and non-abstract methods.
 //		Abstract methods have no code, the code must be written in each child class. Every vehicle accelerates in a different way, 

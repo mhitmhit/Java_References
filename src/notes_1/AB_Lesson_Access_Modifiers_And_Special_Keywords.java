@@ -1,6 +1,6 @@
 package notes_1;
 
-public class Access_Modifiers_And_Special_Keywords {
+public class AB_Lesson_Access_Modifiers_And_Special_Keywords {
 //	class is the blueprint
 //	instance is the a copy created using class
 //	reference is the memory location of the instance that gets assigned to a variable.
@@ -29,5 +29,11 @@ public class Access_Modifiers_And_Special_Keywords {
 
 // Annotations
 //		@Override: 	
+	
+	
+// var (introduced in Java10): local variable type inference.
+// tells java to figure out the compile time type
+	
+	
 	
 }

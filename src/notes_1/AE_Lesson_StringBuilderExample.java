@@ -1,6 +1,6 @@
 package notes_1;
 
-public class StringBuilderExample {
+public class AE_Lesson_StringBuilderExample {
 
 	public static void main(String[] args) {
 		// mutable. unlike Strings which are immutable
@@ -8,7 +8,7 @@ public class StringBuilderExample {
 		
 		
 		String testString = "Hello " + "World";
-		testString.concat("and good bye");
+		testString.concat("and good bye");		// does not change the string ie/ doesnt work.
 		
 		StringBuilder testBuilder = new StringBuilder("Hello " + "World"); 
 		testBuilder.append("and good bye");
@@ -26,8 +26,8 @@ public class StringBuilderExample {
 		
 	}
 	public static void printInformation(StringBuilder builder ) {
-		System.out.println("String = "+ builder);
-		System.out.println("Length = "+ builder.length());
+		System.out.println("String builder = "+ builder);
+		System.out.println("Length of stringBuilder = "+ builder.length());
 		System.out.println(builder.toString() instanceof String);
 	}
 	

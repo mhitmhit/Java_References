@@ -1,6 +1,11 @@
 package notes_1;
 
-public class Generics_Notes {
+public class AK_Generics_Notes {
+	
+	
+	
+	
+	
 //	Generics
 //	Type parameters used for Generics:
 //		E element
@@ -9,7 +14,7 @@ public class Generics_Notes {
 //		T type
 //		V value
 //		
-//		an actual type must me spcified when you create an instance of this class
+//		an actual type must me specified when you create an instance of this class
 //		primitive not allowed for type, only reference type is allowed.
 //		
 //		
