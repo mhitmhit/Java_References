@@ -129,6 +129,90 @@ public class AA_A_Fundamentals {
 //	Troubleshooting tends to exist at a higher level than debugging and applies to many components of a system.
 //	It is a process of parsing out the items that are causing problems.
 	
+
+//		Stack Memory in Java
+//        Stack Memory in Java is used for static memory allocation and the execution of a thread. It contains primitive values that are specific to a method and references to
+//	objects referred to by the method that are in the heap.
+//        Access to this memory is in Last-In-First-Out (LIFO) order. Whenever we call a new method, a new block is created on top of the stack that contains values specific to 
+//	that method, such as primitive variables and references to objects.
+//        When the method finishes execution, its corresponding stack frame is flushed, the flow goes back to the calling method, and space becomes available for the next method.
+//
+//    Key Features of Stack Memory
+//        It grows and shrinks as new methods are called and returned, respectively.
+//        Variables inside the stack exist only as long as the method that created them is running.
+//        It's automatically allocated and deallocated when the method finishes execution.
+//        If this memory is full, Java throws java.lang.StackOverflowError.
+//        Access to this memory is fast compared to heap memory.
+//        This memory is thread-safe, as each thread operates in its own stack.
+//
+//
+//
+//        
+//        Heap Space in Java
+//        Heap space is used for the dynamic memory allocation of Java objects and JRE classes at runtime. New objects are always created in heap space, and the references to these 
+//	objects are stored in stack memory.
+//        These objects have global access, and we can access them from anywhere in the application.
+//    We can break this memory model down into smaller parts, called generations, which are:
+//        Young Generation – this is where all new objects are allocated and aged. A minor garbage collection occurs when this fills up.
+//        Old or Tenured Generation – this is where long-surviving objects are stored. When objects are stored in the Young Generation, a threshold for the object's age is set, 
+//	and when that threshold is reached, the object is moved to the old generation.
+//        Permanent Generation – this consists of JVM metadata for the runtime classes and application methods.
+//    Key Features of Java Heap Memory
+//        Some other features of heap space include:
+//        It's accessed via complex memory management techniques that include the Young Generation, Old or Tenured Generation, and Permanent Generation.
+//        If heap space is full, Java throws java.lang.OutOfMemoryError.
+//        Access to this memory is comparatively slower than stack memory.
+//        This memory, in contrast to the stack, isn't automatically deallocated. It needs a Garbage Collector to free up unused objects in order to maintain efficient memory usage.
+//        Unlike the stack, a heap isn't thread-safe and needs to be guarded by properly synchronizing the code.
+
+
+    
 	
+//	Stack vs Heap
+//	Stack smalled in size compared to heap.
+//	primitives and references of objects stored in stack, objects in heap.
+//	stack is faster than heap.
+//	fixed size for stack, dynamic size for heap, heap can be changed with the jvm options.
+
+	
+	
+	
+	
+	
+	
+//	Garbage Collection
+//	is run in the background by the JVM. There is no way we can explicitly force garbage collection to happen, 
+//	but we can request garbage collection to be run through the use of one of the following:
+//
+//	    System.gc()
+//	    Runtime.getRuntime().gc()
+//	    System.runFinalization()
+
+
+	
+//	Wrapper classes are classes that let you treat primitives as objects. This is necessary—for example—for certain methods that only accept objects and not primitives. 
+//	Boxing is the process of converting a primitive to its wrapper class. 
+//	Java has a feature called autoboxing, which will automatically convert primitives to wrapper classes implicitly. 
+//	Unboxing is the reverse—converting a wrapper class to its primitive
+	
+//	Real World Application
+//
+//	Wrapper classes in Java are essential for several reasons:
+//
+//	    Integration with Collections: Java collections (such as ArrayList, LinkedList, and HashMap) can only store objects, not primitive types. Wrapper classes allow primitive values to be stored in collections by providing object representations of primitive types. For example, ArrayList can store integer values using the Integer wrapper class.
+//
+//	    Nullability: Primitive types in Java cannot be assigned a null value, whereas objects can. Wrapper classes allow for nullability by providing a way to represent null values for primitive types. For example, if you need to represent an integer value that could be null, you can use the Integer wrapper class instead of int.
+//
+//	    Additional Functionality: Wrapper classes offer additional functionality and utility methods that are not available for primitive types. For example, the Integer class provides methods for parsing strings into integers, converting integers to strings, performing arithmetic operations, and comparing values.
+//
+//	    Compatibility with Generics: Generics in Java only work with objects, not primitive types. Wrapper classes enable the use of generics with primitive types by providing object representations. This allows for type-safe collections and algorithms that work with both primitive types and objects.
+//
+//	Overall, wrapper classes play a crucial role in Java programming by bridging the gap between primitive types and objects, enabling compatibility with collections, generics, APIs, and additional functionality that primitive types lack. They provide flexibility, nullability, and enhanced functionality, making them indispensable in many programming scenarios.
+//
+//	
+	
+	
+	
+
 	
 } // end of class

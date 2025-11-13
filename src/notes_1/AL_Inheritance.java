@@ -10,6 +10,7 @@ public class AL_Inheritance {
 	public static void doAnimalStuff(Animal animal, String speed) {
 		
 		// use example files Animal and Dog
+		// subclass can inherit non-private fields and methods from superclass.
 		animal.makeNoise();
 		animal.move(speed);
 		System.out.println(animal);

@@ -75,7 +75,7 @@ public class AM_OOP_Overview_Notes {
 //
 //
 //		Inheritence types:
-//		single
+//		single. one parent and one child. a extend b.
 //		multilevel: c extend b, b extend a
 //		hierarchichal: b extend a, c extend a
 //		multiple (not allowed in Java): c extend a,b. if a and b have same method, wont know which to call.
