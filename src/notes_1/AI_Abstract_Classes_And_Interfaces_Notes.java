@@ -6,13 +6,13 @@ public class AI_Abstract_Classes_And_Interfaces_Notes {
 	
 	
 	
-//	 Abstract classes: can be used in a concrete class by getting extended. a concrete class can inherit only one abstract class.
+//	Abstract classes: can be used in a concrete class by getting extended. a concrete class can inherit only one abstract class.
 //		abstract class can have both abstract and non-abstract methods.
 //		Abstract methods have no code, the code must be written in each child class. Every vehicle accelerates in a different way, 
 //		so there’s little point writing code for the accelerate() method in the Vehicle class. By leaving it abstract we can write car 
 //		specific code in a Car child class and plane specific code in a Plane child class.
 
-//interface: a class can inherit from multiple interfaces.
+//interface: a class can inherit from multiple interfaces. used by getting implemented.
 //		3 types of methods:
 //		Abstract, default & static
 //		Methods are implicitly abstract when no modifier is used

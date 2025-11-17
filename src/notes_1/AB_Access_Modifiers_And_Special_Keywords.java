@@ -1,6 +1,6 @@
 package notes_1;
 
-public class AB_Lesson_Access_Modifiers_And_Special_Keywords {
+public class AB_Access_Modifiers_And_Special_Keywords {
 //	class is the blueprint
 //	instance is the a copy created using class
 //	reference is the memory location of the instance that gets assigned to a variable.

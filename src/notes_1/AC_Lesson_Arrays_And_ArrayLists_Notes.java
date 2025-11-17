@@ -3,8 +3,12 @@ package notes_1;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
+import java.util.ListIterator;
 
 public class AC_Lesson_Arrays_And_ArrayLists_Notes {
+	public static void main(String[] args) {
+		
 //	Arrays:
 //immutable in size, no methods, works with Java.Util.Arrays class, 
 	//both primitive and reference types.
@@ -21,8 +25,26 @@ public class AC_Lesson_Arrays_And_ArrayLists_Notes {
 //	
 //	
 	
-	
-////	ArrayList:
+		
+////	ArrayList:		
+//		 add(int index, E element) - adds an element at the given index.
+//		 get(int index) - retrieves an element at a given index.
+//		 indexOf(Object o) - retrieves the index of the given element.
+//		 listIterator() / listIterator(int index) - returns an iterator at either the beginning of the list or at the specified index.
+//		 remove(int index) - removes an element at the given index.
+//		 set(int index, E element) - replaces the element at the given index with the given element.
+//		 subList(int fromIndex, int toIndex) - returns a sub-list of the elements in the specified range.
+
+			List<String> list = new ArrayList<>();
+			list.add("Hello");
+			list.add("there");
+			list.add("how");
+			list.add("you?");
+			System.out.println(list); // [Hello, there, how, you?]
+			list.add(3, "are");
+			System.out.println(list); // [Hello, there, how, are, you?]		
+
+			
 ////mutable in size, many methods, works with Java.Util.Collections class, need to be imported, ref types only (but can use wrappers for primitives).
 //	ArrayList<String> namesArrayList = new ArrayList<String>();
 //	namesArrayList.add("ali");
@@ -41,5 +63,34 @@ public class AC_Lesson_Arrays_And_ArrayLists_Notes {
 	// using Arrays Class on above ArrayLists
 //	Arrays.toString(numbersArray);
 //	Collections.max(numsArrayList);
+			
+			
+			
+			
+			
+// iterating through an ArrayList:			
+			// using enhanced for loop
+			for (String element : list) {
+			  System.out.println(element);
+			}
+
+			// iterating forwards with ListIterator
+//			                      [ "hi", "how", "are", "you?" ]
+//			                         0      1      2       3
+//			                      ^
+			ListIterator<String> iterator1 = list.listIterator();
+			while (iterator1.hasNext()) {
+			  System.out.println(iterator1.next()); 
+			}
+
+			// iterating backwards with ListIterator
+//			                      [ "hi", "how", "are", "you?" ]
+//			                         0      1      2       3
+//			                                                 ^
+			ListIterator<String> iterator2 = list.listIterator(list.size());
+			while (iterator2.hasPrevious()) {
+			  System.out.println(iterator2.previous()); 
 	
+			}
+	}
 }
