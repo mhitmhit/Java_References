@@ -266,12 +266,15 @@ public class AM_OOP_Overview_Notes {
 //		Collection Interface
 //		The Collection interface is the foundation upon which the collections framework is built. It declares the core methods that all collections will have.
 //		A collections framework is a unified architecture for representing and manipulating collections. All collections frameworks contain the following :
-//		Interfaces − These are abstract data types that represent collections. Interfaces allow collections to be manipulated independently of the details of their representation. In object-oriented languages, interfaces generally form a hierarchy.
-//		Implementations, i.e., Classes − These are the concrete implementations of the collection interfaces. In essence, they are reusable data structures.
-//		Algorithms − These are the methods that perform useful computations, such as searching and sorting, on objects that implement collection interfaces. The algorithms are said to be polymorphic: that is, the same method can be used on many different implementations of the appropriate collection interface.
-//		In addition to collections, the framework defines several map interfaces and classes. Maps store key/value pairs. Although maps are not collections in the proper use of the term, but they are fully integrated with collections.
-//
-//
+//		Interfaces − These are abstract data types that represent collections. Interfaces allow collections to be manipulated independently of the details of their representation. In object-oriented 
+//	languages, interfaces generally form a hierarchy.
+////		Implementations, i.e., Classes − These are the concrete implementations of the collection interfaces. In essence, they are reusable data structures.
+////		Algorithms − These are the methods that perform useful computations, such as searching and sorting, on objects that implement collection interfaces. The algorithms are said to be polymorphic: 
+//	that is, the same method can be used on many different implementations of the appropriate collection interface.
+////		In addition to collections, the framework defines several map interfaces and classes. Maps store key/value pairs. Although maps are not collections in the proper use of the term, but they are 
+//	fully integrated with collections.
+////
+////
 //
 //		The List Interface
 //		The List interface extends Collection and declares the behavior of a collection that stores a sequence of elements.
@@ -283,7 +286,8 @@ public class AM_OOP_Overview_Notes {
 //
 //
 //		ArrayList
-//		ArrayList is a part of collection framework and is present in java.util package. It provides us dynamic arrays in Java. Though, it may be slower than standard arrays but can be helpful in programs where lots of manipulation in the array is needed.
+//		ArrayList is a part of collection framework and is present in java.util package. It provides us dynamic arrays in Java. Though, it may be slower than standard arrays but can be helpful in 
+//	programs where lots of manipulation in the array is needed.
 //		ArrayList inherits AbstractList class and implements List interface.
 //		ArrayList is initialized by a size, however the size can increase if collection grows or shrunk if objects are removed from the collection.
 //		Java ArrayList allows us to randomly access the list.
@@ -311,42 +315,111 @@ public class AM_OOP_Overview_Notes {
 //		portedOperationException is thrown when an attempt is made to change an unmodifiable map.
 //
 //
-//		Relational Database Management System
-//		A relational database management system (RDBMS) is a program that allows you to create, update, and administer a relational database. Most relational database management systems use the SQL language to access the database.
+
+
+	
+	
+	
+	
+	
+
+//		SOLID is an acronym to remember what the principles are:
+//	    Single Responsibility Principle (SRP)
+//	    Open/Closed Principle (OCP)
+//	    Liskov Substitution Principle (LSP)
+//	    Interface Segregation Principle (ISP)
+//	    Dependency Inversion Principle (DIP)
 //
+//	Single Responsibility Principle (SRP)
 //
-//		Why do we need SQL?
-//		Allows users to access data in the relational database management systems.
-//		Allows users to describe the data.
-//		Allows users to define the data in a database and manipulate that data.
-//		Allows to embed within other languages using SQL modules, libraries & pre-compilers.
-//		Allows users to create and drop databases and tables.
-//		Allows users to create view, stored procedure, functions in a database.
-//		Allows users to set permissions on tables, procedures and views.
+////	SRP states that a class should have only one reason to change. This means that each class should have only one responsibility or job to do. To apply SRP in Java, you should aim to create 
+//	classes that have a clear and single responsibility. If a class has multiple responsibilities, you should consider splitting it into smaller, more focused classes.
+////	Open / Closed Principle (OCP)
+////
+////	OCP states that software entities should be open for extension but closed for modification. This means that you should be able to add new functionality to a system without modifying its 
+//	existing code. To apply OCP in Java, you should aim to design classes that are open for extension but closed for modification. This can be achieved by using interfaces, abstract classes, and 
+//	polymorphism.
+////	Liskov Substitution Principle (LSP)
+////
+////	LSP states that subtypes should be substitutable for their base types. This means that any instance of a base class should be able to be replaced by an instance of a subclass without 
+//	affecting the correctness of the program. To apply LSP in Java, you should aim to create subclasses that can be used in place of their superclass. This means that the subclass should not 
+//	change the behavior of the superclass.
+////	Interface Segregation Principle (ISP)
+////
+////	ISP states that clients should not be forced to depend on interfaces they do not use. This means that interfaces should be small and focused, and clients should only depend on the 
+//	interfaces they need. To apply ISP in Java, you should aim to create interfaces that are small and focused. This means that you should avoid creating large, general-purpose interfaces that 
+//	are used by many clients. Instead, you should create multiple small interfaces that are each focused on a specific set of functionality. Clients can then depend on only the interfaces they need.
+////	Dependency Inversion Principle (DIP)
+////
+////	DIP states that high-level modules should not depend on low-level modules. Both should depend on abstractions. Abstractions should not depend on details. Details should depend on 
+//	abstractions. This means that you should use interfaces or abstract classes to define the behavior of your classes, and then use dependency injection to provide the specific implementations. 
+//	This allows you to easily swap out different implementations without affecting the rest of your code.
 //
+
+	
+//	Single Responsibility Principle (SRP): A class should have only one purpose, focusing on a single responsibility or task.
+//	Open-Closed Principle (OCP): Software entities should be open for extension but closed for modification, enabling flexibility and avoiding modification of existing code.
+//	Liskov Substitution Principle (LSP): Objects of a superclass should be replaceable with objects of their subclasses without affecting the consistency of the program's behavior.
+//	Interface Segregation Principle (ISP): Clients should not be forced to depend on interfaces they do not use, emphasizing specific interfaces tailored to clients' needs 
+//	and reducing unnecessary dependencies.
+//	Dependency Inversion Principle (DIP): High-level modules should not depend on low-level modules; both should depend on abstractions, promoting loose coupling and dependency
+//	inversion through abstractions.
+	
+	
+	
+	
+	
+
+//	Introduction to Maven
+//	Maven Build Lifecycle
 //
+//	When Maven builds your project, it goes through several steps called phases. The default Maven build lifecycle includes the following phases:
 //
-//		Primary Key
-//		A primary key is a field in a table which uniquely identifies each row/record in a database table. Primary keys must contain unique values. A primary key column cannot have NULL values.
-//		A table can have only one primary key, which may consist of single or multiple fields. When multiple fields are used as a primary key, they are called a composite key.
-//		If a table has a primary key defined on any field(s), then you cannot have two records having the same value of that field(s).
+//	    Validate => project is correct and all necessary information is available;
+//	    Compile => compiles project source code;
+//	    Test => tests all compiled code;
+//	    Package => packages all compiled code into a WAR/JAR file;
+//	    Verify => runs any checks on the results of integration tests;
+//	    Install => installs the WAR/JAR to the local repository;
+//	    Deploy => copies the final WAR/JAR to the remote repository.
 //
+//	Each phase in turn is composed of plugin goals that are bound to zero or more build phases. A "goal" represents a specific task that contributes to the building or managing of the project.
 //
-//
-//		SQL Statements
-//		DDL - Data Definition Language - CREATE, ALTER, DROP
-//		DML - Data Manipulation Language - SELECT, INSERT, UPDATE, DELETE
-//		DCL - Data Control Language - GRANT, REVOKE
-//		TCL - Transaction Control Language - SAVEPOINT, ROLLBACK, COMMIT
-//
-//
-//
-//		Different Types Of Joins
-//		INNER JOIN
-//		LEFT JOIN
-//		RIGHT JOIN
-//		FULL JOIN
+//POM Project Object Model
+//Maven identifies projects through project coordianates defined in a Project Object Model (POM) file. The POM is an XML file that contains information about the project and 
+//configuration details used by Maven to build the project. The POM file is named pom.xml and is located in the base directory of the project.
 //	
+	
+	
+
+////	What are WAR and JAR files?
+////
+////	Java ARchive (JAR) files are package file formats that combine numerous Java class files, related metadata, and resources (text, images, etc.) into 
+//	a single file for distribution. Java applications are typically packaged and distributed as JAR files, which are essentially ZIP files with a .jar extension.
+////
+////	Web applications are distributed via WAR (Web Application ARchive) files, a specific kind of JAR file. JavaScript, HTML, JSP, and other files required for web 
+//	application development are included in WAR files. Maven projects can be deployed to servlet containers such as Tomcat or Jetty when they are packaged as WAR files.
+////
+////	Depending on your project configuration in the pom.xml file, Maven will either create a WAR file for web applications or a JAR file for standard Java applications 
+//	during the package phase. This is specified in the packaging element of your pom.xml.
+////	Using the mvn command
+
+	
+	
+	
+	
+// MVN commands:
+// mvn --version
+// mvn package  (creates jar/war in target folder)
+// mvn dependency:copy-dependencies (to execute maven goals, plugin:goal)
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 }
