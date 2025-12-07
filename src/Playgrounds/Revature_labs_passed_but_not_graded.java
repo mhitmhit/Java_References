@@ -1,6 +1,11 @@
 package Playgrounds;
 
 public class Revature_labs_passed_but_not_graded {
+
+	/**
+// --------------------------------------------------
+	// 24 Monday
+	
 //	Coding Lab: Insert
 //	problem1.sql file
 //	INSERT INTO song (title, artist) VALUES ('Kashmir', 'Beatles');
@@ -30,20 +35,20 @@ public class Revature_labs_passed_but_not_graded {
 //	SELECT * FROM employee WHERE salary > 75000.00;
 	
 	
-//	Coding Lab: Group By
-//	problem1.sql file
-//	SELECT artist, COUNT(song)
-//	FROM song
-//	GROUP BY artist
-//	ORDER BY COUNT(song) DESC;
+	Coding Lab: Group By
+	problem1.sql file
+	SELECT artist, COUNT(song)
+	FROM song
+	GROUP BY artist
+	ORDER BY COUNT(song) DESC;
 	
 
 	
-//	Coding Lab: Order by
-//	problem1.sql file
-//	SELECT * FROM character ORDER BY last_name, first_name ASC;
+	Coding Lab: Order by
+	problem1.sql file
+	SELECT * FROM character ORDER BY last_name, first_name ASC;
 	
-/**
+
 Coding Lab: CreateTable
 problem1.sql file
 CREATE TABLE song (title VARCHAR(100), artist VARCHAR(100));
@@ -73,6 +78,9 @@ DROP TABLE song;
 
 
 
+
+----------------------------------------------
+25 Tuesday
 
 
 

@@ -1,6 +1,6 @@
-package notes_1.Example_Files;
+package notes_1_Example_Files;
 
-public class Dog extends notes_1.Example_Files.Animal{
+public class Dog extends notes_1_Example_Files.Animal{
 	String earShape;
 	String tailShape;
 	

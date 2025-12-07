@@ -1,4 +1,4 @@
-package notes_1.Example_Files;
+package notes_1_Example_Files;
 
 public class Student_Record {
 

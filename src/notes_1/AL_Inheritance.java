@@ -1,7 +1,7 @@
 package notes_1;
 
-import notes_1.Example_Files.Animal;
-import notes_1.Example_Files.Dog;
+import notes_1_Example_Files.Animal;
+import notes_1_Example_Files.Dog;
 
 // a class can extend one class only
 

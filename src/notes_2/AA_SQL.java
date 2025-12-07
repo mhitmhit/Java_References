@@ -1,7 +1,7 @@
-package notes_1;
+package notes_2;
 
 
-public class AN_SQL {
+public class AA_SQL {
 //	Relational Database Management System
 //	A relational database management system (RDBMS) is a program that allows you to create, update, and administer a relational database. Most relational database management systems use the SQL language to access the database.
 //
@@ -410,6 +410,424 @@ public class AN_SQL {
 
 
 
+Constraints:
+
+CREATE TABLE SalesTransaction(
+ transId VARCHAR(8) PRIMARY KEY,
+ customerId CHAR(7) NOT NULL REFERENCES Customer(customerId),
+ storeId INT NOT NULL REFERENCES Store(StoreId),
+-- Using DEFAULT to default to the current date cannot be null because a default value will be given
+ transDate DATE DEFAULT now()
+);
+
+CREATE TABLE Vendor(
+ vendorId  CHAR(2) NOT NULL,
+ vendorName VARCHAR(25) UNIQUE NOT NULL,
+ PRIMARY KEY (vendorId)
+); 
+
+ALTER TABLE <table_name> ADD CONSTRAINT <constraint_name> <constraint_type>(constraint_option, ...)
+
+CREATE TABLE <table_name> (
+    <col_name> datatype constraint1 constraint2,
+    CONSTRAINT <constraint_name> <constraint_type>(constraint_option, ...)
+)
+
+Implementation
+
+Syntax to create a table with employee_id as an attribute that will AUTO_INCREMENT when inserting a new record.
+
+CREATE TABLE table_name(
+variable_name variable_datatype AUTO_INCREMENT
+);
+
+Example:
+
+CREATE TABLE employees (
+    employee_id INT AUTO_INCREMENT PRIMARY KEY,
+    employee_name VARCHAR(50),
+    department_id INT
+);
+
+This same table written using SERIAL would look as follows:
+
+CREATE TABLE table_name (
+    variable_name SERIAL PRIMARY KEY,
+    -- Other columns...
+);
+
+Example:
+
+CREATE TABLE employees (
+    employee_id SERIAL PRIMARY KEY,
+    employee_name VARCHAR(50),
+    department_id INT
+);
+
+CREATE TABLE FishTank (
+   FishID INT PRIMARY KEY,
+   Species VARCHAR(50),
+   -- Ensure tank size is positive and not too large
+   TankSize DECIMAL CHECK (TankSize > 0 AND TankSize <= 100), 
+   -- Ensure temperature is within a reasonable range
+   Temperature DECIMAL CHECK (Temperature >= 0 AND Temperature <= 30)
+);  
+
+
+CREATE TABLE products (
+    productID INT PRIMARY KEY,
+    productPrice DECIMAL CHECK (productPrice > 0)
+);
+
+
+
+
+Implementation
+
+It's important to refer to the documentation of the specific database system you are using, 
+as the syntax and supported data types for DEFAULT can vary between database management systems.
+
+CREATE TABLE UserOnline (
+    ID INT PRIMARY KEY,
+    UserName VARCHAR(25),
+    Online BOOLEAN DEFAULT false
+);
+
+-- Inserting a user with online status not specified (defaults to false)
+INSERT INTO UserOnline (ID, UserName) VALUES (1, 'LemonadeStandBoss');
+
+-- Inserting a user with online status explicitly set to true
+INSERT INTO UserOnline (ID, UserName, Online) VALUES (2, 'CodeLikeABoss', true);
+
+
+
+
+CREATE TABLE employee(
+    employee_id INT PRIMARY KEY,
+    first_name VARCHAR(20),
+    last_name VARCHAR(20),
+    emp_role VARCHAR(20)
+    );
+
+
+
+
+
+ *      CREATE TABLE site_user (
+ *          id SERIAL PRIMARY KEY,
+ *          username varchar(100),
+ *          password varchar(100)
+ *      );
+ *      
+ *      
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+Foreign Key: 
+
+Step 1: Create a table named Student.
+
+CREATE TABLE Student (
+    student_id INT PRIMARY KEY,
+    first_name VARCHAR(20),
+    last_name VARCHAR(20),
+    major VARCHAR(20)
+);
+
+Step 2: Create a table named InternationalStudent.
+
+CREATE TABLE InternationalStudent (
+    country_id INT PRIMARY KEY,
+    name VARCHAR(20),
+    student_id INT,
+    FOREIGN KEY (student_id) REFERENCES Student(student_id)
+    ON DELETE CASCADE
+);
+
+Step 3: Insert values into Student table and InternationalStudent table.
+
+INSERT INTO Student VALUES (1, "Taylor", "Swift", "English Literature");
+INSERT INTO Student VALUES (2, "Stephen", "Hawking", "Physics");
+INSERT INTO InternationalStudent VALUES (1, "USA", 1);
+INSERT INTO InternationalStudent VALUES (2, "UK", 2);
+
+SELECT * FROM InternationalStudent;
+
+Result:
+country_id 	name 	student_id
+1 	USA 	1
+2 	UK 	2
+
+Step 4: Delete a record from the Student table.
+
+DELETE FROM Student WHERE major = "English Literature";
+
+Now the record in the child table InternationalStudent with student_id as 1 is deleted.
+
+SELECT * FROM InternationalStudent;
+
+Result:
+country_id 	name 	student_id
+2 	UK 	2
+
+
+
+
+
+
+Implementation
+
+Step 1: Create a Branch and Employee table
+
+CREATE TABLE Branch(
+    id INT PRIMARY KEY,
+    name VARCHAR(20)
+);
+
+CREATE TABLE Employee(
+    id INT PRIMARY KEY,
+    name VARCHAR(20),
+    address VARCHAR(50)
+);
+
+Step 2: Add branch_id as a foreign key for the employee table
+
+ALTER TABLE Employee ADD branch_id INT;
+ALTER TABLE Employee ADD FOREIGN KEY (branch_id) REFERENCES Branch(id);
+
+DESC Employee;
+
+Result:
+Field 	Type 	Null 	Key 	Default 	Extra
+employee_id 	int 	NO 	PRI 	NULL 	
+first_name 	varchar(20) 	YES 		NULL 	
+last_name 	varchar(20) 	YES 		NULL 	
+emp_role 	varchar(20) 	YES 		NULL 	
+branch_id 	int 	YES 	MUL 	NULL 	
+
+The id column in the branch table is its PRIMARY KEY, and it is used by the FOREIGN 
+KEY of the employee table.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CASCADE:
+CASCADE is a keyword used to simultaneously delete or update data from both the child and parent tables and is used in conjunction with ON DELETE or ON UPDATE. 
+Applying the CASCADE keyword to the command modifies the changes in 
+both parent and child tables according to the execution of that query. CASCADE is appended to the reference command for the foreign key when creating a table
+Description
+
+In SQL, CASCADE is a keyword used to simultaneously delete or update data from both the child and parent tables and is used in conjunction with ON DELETE or ON 
+UPDATE. Applying the CASCADE keyword to the command modifies the changes in both parent and child tables according to the execution of that query. CASCADE is appended 
+to the reference command for the foreign key when creating a table.
+ON DELETE
+
+Appending ON DELETE CASCADE to the foreign keys within our child table allows us the opportunity to delete the parent record and subsequently delete all relational 
+information in any referenced table through one command. Otherwise, due to referential integrity, it would require multiple commands to delete all of the referenced 
+records inside the child tables first before removing the parent record.
+ON UPDATE
+
+Appending ON UPDATE CASCADE to the foreign key within our child table allows us to update information in a single command. By updating the parent table record, changes 
+will apply to all subsequent child tables' information. This also helps reduce the number of commands and keeps our referential integrity intact.
+
+
+Implementation
+
+Sticking with the college student theme, let's look at students in a college course and use CASCADE to handle deletions and updates.
+
+    Define the table for students
+
+CREATE TABLE students(
+    student_id INT PRIMARY KEY,
+    student_name VARCHAR(40),
+    email VARCHAR(20) UNIQUE
+);
+
+    Define the table for courses
+
+CREATE TABLE courses(
+    course_id INT PRIMARY KEY,
+    course_name VARCHAR(20),
+    course_length_weeks INT,
+    credits INT
+);
+
+    Finally, let's define a junction table to handle enrollment and use CASCADE
+        For the purposes of this example, we will assume that courses never get updated
+
+CREATE TABLE enrollments(
+    course_id INT,
+    student_id INT,
+    grade INT,
+    completion_status BOOLEAN,
+    PRIMARY KEY(course_id, student_id),
+    FOREIGN KEY(course_id) REFERENCES courses(course_id) ON DELETE CASCADE,
+    FOREIGN KEY(student_id) REFERENCES students(student_id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+    The above command allows for the deletion of all referenced courses through a single command by removing the record from the courses table. 
+    Along with this, the command also accounts for any updates or deletions within the student table records.
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+UNIQUE:
+-- Create a table with a UNIQUE constraint allowing NULL values
+CREATE TABLE students (
+    studentId INT UNIQUE,
+    firstName VARCHAR(255),
+    lastName VARCHAR(255)
+);
+
+-- Insert rows with unique non-null values and multiple NULL values
+-- This is valid, as NULL values are not considered duplicates for the UNIQUE constraint
+INSERT INTO students (studentId, firstName, lastName) VALUES
+    (1, 'Jane', 'Smith'),
+    (2, 'Suzanne', 'Brown'),
+    (NULL, 'Abdul', 'Singh'),
+    (NULL, 'Soria', 'Waler');
+    
+    
+    
+    
+
+    
+ALTERNATE KEYS:
+A candidate key is a column or a combination of columns that uniquely identifies each row in a table.
+Any table can have only one primary key, so all the candidate keys other than the primary key are secondary keys or alternate keys.
+A secondary key and a foreign key are NOT related or the same.
+
+
+
+
+
+
+
+
+
+
+
+
+SUBQUERIES:
+Nested Query in the WHERE clause
+Inline View in the FROM clause
+Inner Query in the SELECT clause
+
+SELECT col1, ... FROM table_ref WHERE (subquery);
+
+SELECT a.id, a.name, b.evalName, b.mark FROM students a, evals b WHERE a.id = b.studentId
+    AND b.evalName = 'quiz 1'
+    AND b.mark > (SELECT mark FROM evals WHERE evalName = 'quiz 1' AND studentId = 2);
+    
+SELECT a.name, b.evalName, b.mark FROM students a, (SELECT studentId, evalName, mark FROM evals 
+WHERE mark > 90) b WHERE a.id = b.studentId; 
+
+SELECT a.id, a.name, (SELECT AVG(mark) FROM evals WHERE studentId = a.id GROUP BY studentId) avg 
+FROM students a; 
+
+
+
+
+
+
+
+
+
+
+
+
+JOIN:
+
+SELECT 
+TABLE_NAME1.column1, TABLE_NAME1.columnN, TABLE_NAME2.column1, TABLE_NAME2.columnN
+FROM TABLE_NAME1
+INNER JOIN TABLE_NAME2
+ON TABLE_NAME1.matching_column = TABLE_NAME2.matching_column;
+
+
+
+
+
+inner join only shows matching results. 
+
+There are three types of OUTER JOIN: FULL, LEFT, and RIGHT.
+let and right joins show all results from primary table + matching results. non matched will have null values. 
+outer join or full join combines tables together with non matching having null values. 
+
+
+theta join is based on an arbitrary comparison. 
+
+equi join is based on an equality or matching column data. 
+
+Syntax for Equi-Join: SELECT * FROM Table1 JOIN Table2 ON Table1.Column = Table2.Column;
+Syntax for Theta-Join: SELECT * FROM Table1, Table2 WHERE Table1.Column > Table2.Column;
+
+
+
+ * Example: SELECT * FROM table_left INNER JOIN table_right
+ * ON table_left.column1 = table_right.column3;
+ * 
+ *SELECT * FROM table_left INNER JOIN table_right
+ * ON table_left.column1 = table_right.column3
+ * WHERE table_left.column1 = value;
+ * 
+ *  
+ *  * SELECT * FROM table_left INNER JOIN table_right
+         * ON table_left.column1 = table_right.column3
+         * WHERE table_left.column1 = value;
+
+ *      SELECT * FROM table_left
+ *      FULL OUTER JOIN table_right ON table_left.character = table_right.character
 
 
 
@@ -454,7 +872,29 @@ public class AN_SQL {
 
 
 
-	 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	*/
 	
 	
 	
