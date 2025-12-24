@@ -7,3 +7,4 @@ public class EmailSender implements sendable {
 	}
 
 }
+

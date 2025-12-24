@@ -1,8 +1,5 @@
 package notes_1;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class AA_B_DSA {
 	public static void main(String[] args) {
 // arrays based structure, store info in array indexes. List and Arraylist. List is an interface, Arraylist is a class that implements the List interface.

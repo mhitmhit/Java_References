@@ -26,7 +26,7 @@ public class AC_Lesson_Arrays_And_ArrayLists_Notes {
 //	
 	
 		
-////	ArrayList:		
+////	ArrayList:	(not thread safe)	
 //		 add(int index, E element) - adds an element at the given index.
 //		 get(int index) - retrieves an element at a given index.
 //		 indexOf(Object o) - retrieves the index of the given element.
