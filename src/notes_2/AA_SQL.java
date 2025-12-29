@@ -1107,11 +1107,48 @@ CLUSTER Accounts USING idx_AccountID;
 
 
 
+DCL sublanguage (Data control Language)
+	GRANT
+	REVOKE
+
+GRANT PRIVILEGES ON object TO user;
+GRANT SELECT ON posts TO 'john.user';
+GRANT SELECT, INSERT, UPDATE, DELETE ON posts TO 'community.manager';
+REVOKE PRIVILEGES ON object FROM user;
+REVOKE SELECT ON posts FROM 'john.user';
+REVOKE SELECT, INSERT, UPDATE, DELETE ON posts FROM 'community.manager';
 
 
 
 
 
+
+
+
+TCL sublanguage (Transaction control language)
+SQL transaction is a sequence of one or more SQL operations (such as queries, inserts, updates, or deletes) 
+that are treated as a single unit of work
+
+START TRANSACTION / BEGIN: Starts a new transaction.
+
+COMMIT: This command is used to save the data permanently. Whenever we perform any of the DML commands, 
+such as INSERT, DELETE, or UPDATE, these changes can be rolled back if the data is not stored permanently. 
+To be on the safer side, the COMMIT command is used.
+
+ROLLBACK: This command is used to restore the data to the last savepoint or last committed state. If, for 
+some reason, the data inserted, deleted, or updated is not correct, you can rollback the data to a particular 
+savepoint, or if a savepoint has not been created, then to the last committed state.
+
+SAVEPOINT: This command is used to save the data at a particular point temporarily so that whenever needed, 
+it can be rolled back to that particular point.
+
+START TRANSACTION;
+INSERT INTO bankaccounts VALUES("ACC3", 10000);
+SAVEPOINT sv;
+INSERT INTO bankaccounts VALUES("ACC4", 900000);
+ROLLBACK TO sv;
+INSERT INTO bankaccounts VALUES("ACC4", 90000);
+COMMIT;
 
 
 
