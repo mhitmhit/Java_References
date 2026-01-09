@@ -544,7 +544,8 @@ A CallableStatement can return one ResultSet object or multiple ResultSet object
 
 # JDBC Walkthrough
 
-JDBC stands for Java DataBase Connnectivity. It is utilized to connect our java code with a database. JDBC will allow us to execute SQL statements from java and retrieve the result set of that query to be utilized in java.
+JDBC stands for Java DataBase Connnectivity. It is utilized to connect our java code with a database. JDBC will allow us 
+to execute SQL statements from java and retrieve the result set of that query to be utilized in java.
 
 ## JDBC classes to know
 ### **Connection**: Creates an active connection to a database

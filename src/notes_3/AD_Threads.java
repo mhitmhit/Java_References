@@ -143,8 +143,6 @@ public class ThreadDriver {
 
 
 Runnable Interface
-Description
-Runnable Interface
 
 In Java, multithreading is achieved via the Thread class and/or the Runnable interface. java.lang.Runnable is an interface 
 that is to be implemented by a class whose instances are intended to be executed by a thread.
@@ -188,9 +186,10 @@ subclass of thread class								an implemented interface
 cannot inherit another class							can inherit any other class
 
 Thread Class vs Runnable Interface
-
-    If we extend the Thread class, our class cannot extend any other class because Java doesn’t support multiple inheritance. But, if we implement the Runnable interface, our class can still extend other base classes.
-    We can achieve basic functionality of a thread by extending the Thread class because it provides some built-in methods like yield(), interrupt() etc. that are not available in Runnable interface.
+    If we extend the Thread class, our class cannot extend any other class because Java doesn’t support multiple 
+    inheritance. But, if we implement the Runnable interface, our class can still extend other base classes.
+    We can achieve basic functionality of a thread by extending the Thread class because it provides some built-in methods 
+    like yield(), interrupt() etc. that are not available in Runnable interface.
     Using Runnable will give you an object that can be shared amongst multiple threads.
 
 

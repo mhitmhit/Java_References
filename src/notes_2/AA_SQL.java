@@ -1214,7 +1214,6 @@ Prevents other transactions from updating or deleting any data it queries.
 The transaction holds read locks on all records it references and write locks on referenced records for update 
 and delete actions.
 Transaction phenomena allowed: phantom read.
-Transaction phenomena prevented: dirty read, non-repeatable read.
 
 Serializable
 Serializable is the highest isolation level.
